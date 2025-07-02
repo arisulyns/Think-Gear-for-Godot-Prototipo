@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjmodf6v73v6g"]
+
+[ext_resource type="Script" uid="uid://d4li760s1gj1k" path="res://Script/player.gd" id="1_jdi6g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jdi6g"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera_pivot")]
+script = ExtResource("1_jdi6g")
+mouse_sensitivity = 0.02
+camera_pivot = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_jdi6g")

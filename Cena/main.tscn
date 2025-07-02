@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdqnmypiqrkxx"]
+
+[ext_resource type="Script" uid="uid://35e8obx3rgkh" path="res://Script/main.gd" id="1_rhtqi"]
+[ext_resource type="PackedScene" uid="uid://58ahhrrok5xi" path="res://Cena/NodeTGAM.tscn" id="2_nnmrw"]
+[ext_resource type="PackedScene" uid="uid://cjmodf6v73v6g" path="res://Cena/player.tscn" id="3_skhdm"]
+[ext_resource type="PackedScene" uid="uid://b2cs8jnd2txe5" path="res://Cena/world.tscn" id="4_j3ldd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_skhdm"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_j3ldd"]
+sky_material = SubResource("ProceduralSkyMaterial_skhdm")
+
+[sub_resource type="Environment" id="Environment_l0jnj"]
+background_mode = 2
+sky = SubResource("Sky_j3ldd")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_rhtqi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l0jnj")
+
+[node name="TGAM" parent="." instance=ExtResource("2_nnmrw")]
+
+[node name="TGAMTimer" type="Timer" parent="TGAM"]
+
+[node name="Player" parent="." instance=ExtResource("3_skhdm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.604689, 0)
+
+[node name="World" parent="." instance=ExtResource("4_j3ldd")]
+
+[connection signal="timeout" from="TGAM/TGAMTimer" to="." method="_on_tgam_timer_timeout"]

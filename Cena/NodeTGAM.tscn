@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://58ahhrrok5xi"]
+
+[ext_resource type="Script" uid="uid://26okqf37jb4x" path="res://Script/TGAM.cs" id="1_rhtqi"]
+
+[node name="NodeTGAM" type="Node"]
+script = ExtResource("1_rhtqi")

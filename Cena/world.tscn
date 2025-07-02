@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2cs8jnd2txe5"]
+
+[ext_resource type="Script" uid="uid://cmhgwul2d8g78" path="res://Script/world.gd" id="1_mby75"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mby75"]
+albedo_color = Color(0.297093, 0.297093, 0.297093, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_exys1"]
+size = Vector3(3.53, 0.23, 2.685)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1d3h"]
+albedo_color = Color(0.286275, 1, 0.286275, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_icefp"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mby75"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_mby75")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_mby75")
+mesh = SubResource("BoxMesh_exys1")
+
+[node name="LabelGraph" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.73583, 3.45982)
+
+[node name="Mesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42909, 0.332619, 0.992768)
+material_override = SubResource("StandardMaterial3D_l1d3h")
+mesh = SubResource("BoxMesh_icefp")
+
+[node name="Label1" type="Label3D" parent="Mesh1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.411538, 0)
+billboard = 1
+text = "aaaa"
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.418, 0.333, 1.134)
+mesh = SubResource("BoxMesh_mby75")
+
+[node name="Label2" type="Label3D" parent="Mesh2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0293911, 0.401391, -0.159849)
+billboard = 1
+text = "aaaa"
