@@ -12,6 +12,7 @@ extends CharacterBody3D
 @export var vertical_limit := 90.0 
 @export var horizontal_limit := 360.0
 @export var camera_pivot : Node3D
+@export var body_pivot : Node3D
 
 # Variáveis internas
 var direction = Vector3.ZERO
@@ -20,14 +21,13 @@ func _ready():
 	# Esconde e trava o cursor do mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func player_main(delta, _eeg_values: Dictionary):
-	player_move(delta)
+func player_main(delta, eeg_values: Dictionary):
 	move_and_slide()
-
-
-
-
-
+	player_move(delta)
+	
+	$PlayerModel/Node/Body/Display/Noise.text = str(eeg_values.get("GetNoisePercentage")) + "%\n"
+	$PlayerModel/Node/Body/Display/Info.text = "Atenção: " + str(eeg_values.get("GetAttentionValue")) + "%\n" + "Meditação: " + str(eeg_values.get("GetMeditationValue")) + "%\n"
+	
 
 
 func player_move(delta):
@@ -36,13 +36,13 @@ func player_move(delta):
 	
 	# Combina movimentos simultâneos (ex: frente + direita)
 	if Input.is_action_pressed("move_forward"):
-		direction -= transform.basis.z
+		direction += body_pivot.transform.basis.z
 	if Input.is_action_pressed("move_back"):
-		direction += transform.basis.z
+		direction -= body_pivot.transform.basis.z
 	if Input.is_action_pressed("move_left"):
-		direction -= transform.basis.x
+		direction += body_pivot.transform.basis.x
 	if Input.is_action_pressed("move_right"):
-		direction += transform.basis.x
+		direction -= body_pivot.transform.basis.x
 	
 	# Normaliza para movimento diagonal não ser mais rápido
 	direction = direction.normalized()
@@ -62,14 +62,18 @@ func player_move(delta):
 func _input(event):
 	# Rotação da câmera com o mouse
 	if event is InputEventMouseMotion:
-		# Rotação horizontal (personagem inteiro)
-		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
+		# Rotação horizontal
+		camera_pivot.rotation_degrees.y += -event.relative.x * mouse_sensitivity
 		
 		# Rotação vertical (apenas pivô da câmera)
-		var current_vert_rotation = camera_pivot.rotation_degrees.x
+		var current_vert_rotation = camera_pivot.rotation_degrees.z
 		var new_rotation = current_vert_rotation - (event.relative.y * mouse_sensitivity)
-		camera_pivot.rotation_degrees.x = clamp(new_rotation, -vertical_limit, vertical_limit)
+		camera_pivot.rotation_degrees.z = clamp(new_rotation, -vertical_limit, vertical_limit)
 	
+		# Rotação do corpo
+		if abs(camera_pivot.rotation_degrees.y - body_pivot.rotation_degrees.y) >= horizontal_limit:
+			body_pivot.rotation_degrees.y += -event.relative.x * mouse_sensitivity
+			
 	# Tecla para liberar/capturar mouse
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ESCAPE:
