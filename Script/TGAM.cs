@@ -11,7 +11,7 @@ using System.IO.Ports;
 public partial class TGAM : Node
 {
 	// Configurações da porta serial
-	[Export] public string PortName = "COM4";
+	[Export] public string PortName = "COM6";
 	[Export] public int BaudRate = 57600;
 
 #if GODOT_WINDOWS || GODOT_LINUX

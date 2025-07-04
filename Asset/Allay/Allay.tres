@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b6tmgjptbbtyw"]
+
+[ext_resource type="Texture2D" uid="uid://bq1jkqhe7k4e5" path="res://Asset/Allay/Allay_0.png" id="1_057os"]
+
+[resource]
+render_priority = 1
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_057os")
+texture_filter = 0

@@ -25,8 +25,8 @@ func player_main(delta, eeg_values: Dictionary):
 	move_and_slide()
 	player_move(delta)
 	
-	$PlayerModel/Node/Body/Display/Noise.text = str(eeg_values.get("GetNoisePercentage")) + "%\n"
-	$PlayerModel/Node/Body/Display/Info.text = "Atenção: " + str(eeg_values.get("GetAttentionValue")) + "%\n" + "Meditação: " + str(eeg_values.get("GetMeditationValue")) + "%\n"
+	$PlayerModel/Node/Body/Display/Noise.text = str(eeg_values.get("noise")) + "%\n"
+	$PlayerModel/Node/Body/Display/Info.text = "Atenção: " + str(eeg_values.get("attention")) + "%\n" + "Meditação: " + str(eeg_values.get("meditation")) + "%\n"
 	
 
 
@@ -50,6 +50,9 @@ func player_move(delta):
 
 	# Calcula velocidade final
 	velocity = direction * walk_speed * delta
+	
+	if direction != Vector3.ZERO:
+		body_pivot.rotation_degrees.y = lerp(body_pivot.rotation_degrees.y, camera_pivot.rotation_degrees.y, 5.0 * delta)
 	
 
 

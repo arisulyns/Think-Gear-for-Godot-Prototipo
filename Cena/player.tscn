@@ -298,7 +298,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8h5if")
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera_pivot", "body_pivot")]
-collision_mask = 2
+collision_mask = 6
 script = ExtResource("1_jdi6g")
 walk_speed = 100.0
 mouse_sensitivity = 0.05

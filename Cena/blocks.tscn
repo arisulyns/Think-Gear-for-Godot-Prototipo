@@ -16,7 +16,7 @@ texture_repeat = false
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xhj10"]
 _surfaces = [{
-"aabb": AABB(-0.25, 0, -0.25, 0.5, 0.5, 0.5),
+"aabb": AABB(-0.5, -0.25, -0.5, 1, 1, 1),
 "format": 34896613377,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAQADAAIAAwAAAAIAAAAEAAEAAQAFAAMABAAFAAEAAwAGAAAABgAEAAAABQAGAAMABgAHAAQABAAHAAUABQAHAAYA"),
@@ -31,7 +31,7 @@ blend_shape_mode = 0
 [sub_resource type="ArrayMesh" id="ArrayMesh_bhd35"]
 resource_name = "blockbench_export_mesh"
 _surfaces = [{
-"aabb": AABB(-0.25, 0, -0.25, 0.5, 0.5, 0.5),
+"aabb": AABB(-0.5, -0.25, -0.5, 1, 1, 1),
 "attribute_data": PackedByteArray("/z8AAAAA/z8AAAAA/z//P/8//4cAAP9H/z//RwAA/4f/R/8//4cAAP+H/z//RwAA/4f/h/9H/0f/h/9H/0f/h/8//88AAP+P/z//jwAA/8//zwAA/4//P/+PAAD/z/8/"),
 "format": 34896613399,
 "index_count": 36,
@@ -46,8 +46,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xhj10")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cjj6m"]
-points = PackedVector3Array(0.25, 0.5, 0.25, 0.25, 0.5, -0.25, -0.25, 0.5, 0.25, 0.25, 0, 0.25, 0.25, 0, -0.25, -0.25, 0.5, -0.25, -0.25, 0, 0.25, -0.25, 0, -0.25)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qlmk0"]
+points = PackedVector3Array(0.5, 0.75, 0.5, 0.5, 0.75, -0.5, -0.5, 0.75, 0.5, 0.5, -0.25, 0.5, 0.5, -0.25, -0.5, -0.5, 0.75, -0.5, -0.5, -0.25, 0.5, -0.5, -0.25, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x28ae"]
 resource_name = "material_1"
@@ -61,7 +61,7 @@ texture_repeat = false
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qrwnp"]
 _surfaces = [{
-"aabb": AABB(-0.25, 0, -0.25, 0.5, 0.5, 0.5),
+"aabb": AABB(-0.5, -0.25, -0.5, 1, 1, 1),
 "format": 34896613377,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAQADAAIAAwAAAAIAAAAEAAEAAQAFAAMABAAFAAEAAwAGAAAABgAEAAAABQAGAAMABgAHAAQABAAHAAUABQAHAAYA"),
@@ -76,7 +76,7 @@ blend_shape_mode = 0
 [sub_resource type="ArrayMesh" id="ArrayMesh_ck5sh"]
 resource_name = "blockbench_export_mesh2"
 _surfaces = [{
-"aabb": AABB(-0.25, 0, -0.25, 0.5, 0.5, 0.5),
+"aabb": AABB(-0.5, -0.25, -0.5, 1, 1, 1),
 "attribute_data": PackedByteArray("/z8AAAAA/z8AAAAA/z//P/8//4cAAP9H/z//RwAA/4f/R/8//4cAAP+H/z//RwAA/4f/h/9H/0f/h/9H/0f/h/8//88AAP+P/z//jwAA/8//zwAA/4//P/+PAAD/z/8/"),
 "format": 34896613399,
 "index_count": 36,
@@ -91,8 +91,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qrwnp")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_huy16"]
-points = PackedVector3Array(0.25, 0.5, 0.25, 0.25, 0.5, -0.25, -0.25, 0.5, 0.25, 0.25, 0, 0.25, 0.25, 0, -0.25, -0.25, 0.5, -0.25, -0.25, 0, 0.25, -0.25, 0, -0.25)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u3j2o"]
+points = PackedVector3Array(0.5, 0.75, 0.5, 0.5, 0.75, -0.5, -0.5, 0.75, 0.5, 0.5, -0.25, 0.5, 0.5, -0.25, -0.5, -0.5, 0.75, -0.5, -0.5, -0.25, 0.5, -0.5, -0.25, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7b74c"]
 resource_name = "material_2"
@@ -106,7 +106,7 @@ texture_repeat = false
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xyt1t"]
 _surfaces = [{
-"aabb": AABB(-0.25, 0, -0.25, 0.5, 0.5, 0.5),
+"aabb": AABB(-0.5, -0.25, -0.5, 1, 1, 1),
 "format": 34896613377,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAQADAAIAAwAAAAIAAAAEAAEAAQAFAAMABAAFAAEAAwAGAAAABgAEAAAABQAGAAMABgAHAAQABAAHAAUABQAHAAYA"),
@@ -121,7 +121,7 @@ blend_shape_mode = 0
 [sub_resource type="ArrayMesh" id="ArrayMesh_tpjmt"]
 resource_name = "blockbench_export_mesh3"
 _surfaces = [{
-"aabb": AABB(-0.25, 0, -0.25, 0.5, 0.5, 0.5),
+"aabb": AABB(-0.5, -0.25, -0.5, 1, 1, 1),
 "attribute_data": PackedByteArray("/z8AAAAA/z8AAAAA/z//P/8//4cAAP9H/z//RwAA/4f/R/8//4cAAP+H/z//RwAA/4f/h/9H/0f/h/9H/0f/h/8//88AAP+P/z//jwAA/8//zwAA/4//P/+PAAD/z/8/"),
 "format": 34896613399,
 "index_count": 36,
@@ -136,13 +136,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xyt1t")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2n1ni"]
-points = PackedVector3Array(0.25, 0.5, 0.25, 0.25, 0.5, -0.25, -0.25, 0.5, 0.25, 0.25, 0, 0.25, 0.25, 0, -0.25, -0.25, 0.5, -0.25, -0.25, 0, 0.25, -0.25, 0, -0.25)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_288io"]
+points = PackedVector3Array(0.5, 0.75, 0.5, 0.5, 0.75, -0.5, -0.5, 0.75, 0.5, 0.5, -0.25, 0.5, 0.5, -0.25, -0.5, -0.5, 0.75, -0.5, -0.5, -0.25, 0.5, -0.5, -0.25, -0.5)
 
-[node name="Blocks" type="Node3D"]
+[node name="blocks" type="Node3D"]
 
 [node name="blockbench_export" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.250153, 0, 0.285468)
 
 [node name="Node" type="Node3D" parent="blockbench_export"]
 
@@ -154,7 +153,7 @@ skeleton = NodePath("")
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="blockbench_export/Node/Padrao/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_cjj6m")
+shape = SubResource("ConvexPolygonShape3D_qlmk0")
 
 [node name="Vermelho" type="MeshInstance3D" parent="blockbench_export/Node"]
 mesh = SubResource("ArrayMesh_ck5sh")
@@ -164,7 +163,7 @@ skeleton = NodePath("")
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="blockbench_export/Node/Vermelho/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_huy16")
+shape = SubResource("ConvexPolygonShape3D_u3j2o")
 
 [node name="Verde" type="MeshInstance3D" parent="blockbench_export/Node"]
 mesh = SubResource("ArrayMesh_tpjmt")
@@ -174,4 +173,4 @@ skeleton = NodePath("")
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="blockbench_export/Node/Verde/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_2n1ni")
+shape = SubResource("ConvexPolygonShape3D_288io")
