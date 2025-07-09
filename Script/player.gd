@@ -25,9 +25,10 @@ func player_main(delta, eeg_values: Dictionary):
 	move_and_slide()
 	player_move(delta)
 	
-	$PlayerModel/Node/Body/Display/Noise.text = str(eeg_values.get("noise")) + "%\n"
-	$PlayerModel/Node/Body/Display/Info.text = "Atenção: " + str(eeg_values.get("attention")) + "%\n" + "Meditação: " + str(eeg_values.get("meditation")) + "%\n"
+	$Noise.text = str(eeg_values.get("noise")) + "%\n"
+	$Info.text = "Atenção: " + str(eeg_values.get("attention")) + "%\n" + "Meditação: " + str(eeg_values.get("meditation")) + "%\n"
 	
+
 
 
 func player_move(delta):
@@ -43,6 +44,7 @@ func player_move(delta):
 		direction += body_pivot.transform.basis.x
 	if Input.is_action_pressed("move_right"):
 		direction -= body_pivot.transform.basis.x
+	
 	
 	# Normaliza para movimento diagonal não ser mais rápido
 	direction = direction.normalized()

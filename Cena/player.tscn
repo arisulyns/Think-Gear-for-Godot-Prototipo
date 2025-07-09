@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cjmodf6v73v6g"]
+[gd_scene load_steps=30 format=4 uid="uid://cjmodf6v73v6g"]
 
 [ext_resource type="Script" uid="uid://d4li760s1gj1k" path="res://Script/player.gd" id="1_jdi6g"]
 [ext_resource type="Texture2D" uid="uid://b4r152j4y0ps4" path="res://Asset/Player/Player_0.png" id="2_er4wi"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dlpp5injkjpwy" path="res://Asset/Display/Display.gltf" id="5_oxwmm"]
 [ext_resource type="Texture2D" uid="uid://1j1c4vys4hvh" path="res://Asset/Player/Player_3.png" id="5_u6a6n"]
 [ext_resource type="Texture2D" uid="uid://044t61gx7lo8" path="res://Asset/Player/Player_4.png" id="6_yjrc8"]
+[ext_resource type="FontFile" uid="uid://gc5k4ctagdk6" path="res://Asset/Minecraft.ttf" id="8_yvget"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jdi6g"]
 size = Vector3(1, 2.15234, 1)
@@ -297,6 +298,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8h5if")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxwmm"]
+size = Vector3(0.540649, 0.455566, 1.31348)
+
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera_pivot", "body_pivot")]
 collision_mask = 6
 script = ExtResource("1_jdi6g")
@@ -324,7 +328,7 @@ mesh = SubResource("ArrayMesh_sexw8")
 skeleton = NodePath("")
 
 [node name="ArmLeft" type="MeshInstance3D" parent="PlayerModel/Node/Body"]
-transform = Transform3D(0.847957, -0.15951, 0.505496, 0.416876, 0.789692, -0.450111, -0.327389, 0.592404, 0.736121, 0, -0.1875, -0.34375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1875, -0.34375)
 mesh = SubResource("ArrayMesh_34jng")
 skeleton = NodePath("")
 
@@ -345,6 +349,7 @@ skeleton = NodePath("")
 
 [node name="Display" parent="PlayerModel/Node/Body" instance=ExtResource("5_oxwmm")]
 transform = Transform3D(0.0873813, 0.648348, -0.760172, 0.352388, 0.694035, 0.632447, 0.934901, -0.322198, -0.167336, 0.189619, -0.954924, -0.383261)
+visible = false
 
 [node name="Info" type="Label3D" parent="PlayerModel/Node/Body/Display"]
 transform = Transform3D(-0.00377909, 0, 1.3633, 0, 0.27438, 0, -0.230325, 0, -0.0223687, 0.0418054, 0.181219, 0.191507)
@@ -383,5 +388,37 @@ skeleton = NodePath("")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.2627, -0.00454639, 4.35465e-11)
 current = true
 fov = 100.0
+
+[node name="AreaView" type="Area3D" parent="PlayerModel/Node/Head"]
+collision_mask = 8
+
+[node name="Collision" type="CollisionShape3D" parent="PlayerModel/Node/Head/AreaView"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.48938, 0.135278, -6.10444e-05)
+shape = SubResource("BoxShape3D_oxwmm")
+debug_color = Color(0.803922, 0.411765, 0.156863, 1)
+
+[node name="Noise" type="Label" parent="."]
+texture_filter = 1
+offset_left = 33.0
+offset_top = 35.0
+offset_right = 164.0
+offset_bottom = 66.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_yvget")
+theme_override_font_sizes/font_size = 30
+text = "aaaaaaa"
+
+[node name="Info" type="Label" parent="."]
+offset_left = 34.0
+offset_top = 71.0
+offset_right = 359.0
+offset_bottom = 128.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_yvget")
+theme_override_font_sizes/font_size = 26
+text = "aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaa"
 
 [editable path="PlayerModel/Node/Body/Display"]

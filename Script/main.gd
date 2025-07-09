@@ -12,6 +12,7 @@ func _ready():
 	npc = get_node("NPC")
 	world = get_node("World")
 	
+	
 	#Pegar Sinal a cada 0.5 Segundos
 	$TGAM/TGAMTimer.start(0.5)
 	

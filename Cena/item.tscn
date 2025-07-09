@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3en31pktnw8a"]
+
+[ext_resource type="Script" uid="uid://ec8p6bqpwhe1" path="res://Script/item.gd" id="1_0nmur"]
+[ext_resource type="PackedScene" uid="uid://ghmdx4p1x6cg" path="res://Asset/Item/Item.gltf" id="1_j34tb"]
+[ext_resource type="Material" uid="uid://cklouyi5xp8pc" path="res://Asset/Item/item.tres" id="3_uj6ul"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uj6ul"]
+points = PackedVector3Array(0.0346508, 0.0674603, 0.0684524, -0.38497, 0, -0.0589727, -0.409651, 0.0674603, -0.0664683, 0.0346508, 0.0674603, -0.0664683, 0.0664186, -0.00396825, -0.0108941, -0.417605, -0.00396825, 0.0605151, -0.409651, 0.0674603, 0.0684524, 0.0426051, -0.00396825, 0.0605151, 0.0426051, -0.00396825, -0.058531, -0.441468, -0.00396825, -0.0108941, -0.441468, 0.0674603, 0.0128914, 0.0664186, 0.0674603, 0.0128914, -0.417605, -0.00396825, -0.058531, -0.441468, 0.0674603, -0.0108941, 0.0664186, 0.0674603, -0.0108941, -0.441468, -0.00396825, 0.0128914, 0.0664186, -0.00396825, 0.0128914, 0.0426051, 0.0674603, -0.058531, 0.0426051, 0.0674603, 0.0605151, -0.417605, 0.0674603, -0.058531, -0.417605, 0.0674603, 0.0605151)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j34tb"]
+size = Vector3(0.874542, 0.259888, 0.395111)
+
+[node name="Item" type="CharacterBody3D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_0nmur")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_uj6ul")
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_j34tb")]
+
+[node name="cylinder" parent="blockbench_export/Node" index="0"]
+surface_material_override/0 = ExtResource("3_uj6ul")
+
+[node name="AreaView" type="Area3D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaView"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.285233, 0.0946655, -0.000167847)
+shape = SubResource("BoxShape3D_j34tb")
+
+[connection signal="area_entered" from="AreaView" to="." method="_on_area_view_area_entered"]
+[connection signal="area_exited" from="AreaView" to="." method="_on_area_view_area_exited"]
+
+[editable path="blockbench_export"]

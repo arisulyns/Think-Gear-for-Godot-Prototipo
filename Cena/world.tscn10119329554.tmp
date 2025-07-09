@@ -224,11 +224,5 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 10, 0)
 
-[node name="Item1" parent="." instance=ExtResource("5_2pbnm")]
+[node name="Item" parent="." instance=ExtResource("5_2pbnm")]
 transform = Transform3D(0.821249, 0, -0.57057, 0, 1, 0, 0.57057, 0, 0.821249, 5.69237, 1.98783, -3.65131)
-
-[node name="Item2" parent="." instance=ExtResource("5_2pbnm")]
-transform = Transform3D(0.821249, 0, -0.57057, 0, 1, 0, 0.57057, 0, 0.821249, 5.69237, 1.98783, -4.5756)
-
-[node name="Item3" parent="." instance=ExtResource("5_2pbnm")]
-transform = Transform3D(0.821249, 0, -0.57057, 0, 1, 0, 0.57057, 0, 0.821249, 5.69237, 1.98783, -5.54463)

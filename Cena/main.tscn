@@ -16,7 +16,7 @@ script = ExtResource("1_rhtqi")
 [node name="World" parent="." instance=ExtResource("4_j3ldd")]
 
 [node name="Player" parent="." instance=ExtResource("3_skhdm")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.44305, -0.95141)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.67279, -0.95141)
 
 [node name="NPC" parent="." instance=ExtResource("5_j3ldd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.45064, 1.57997, 3.18598)
